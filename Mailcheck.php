@@ -6,19 +6,19 @@
 
         public function check($email, $type = false){
 
-            $regex = '/^[a-zA-Z0-9._%+-çÇ]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
+            $regex = '/^[a-zA-Z0-9._%+\-\p{L}]+@[a-zA-Z0-9\-]+(\.[a-zA-Z]{2,})+$/mu';
 
             if($type !== false){
 
                 if($type === 1){
-                    $regex = '/^[a-zA-Z0-9._%+-çÇ]+@[a-zA-Z0-9.-]+(.com|.com.br|.br)$/';
+                    $regex = '/^[a-zA-Z0-9._%+\-\p{L}]+@(?!(.*\.)?(((com|br)(\.com|\.[^br]))|(br\.(com|br))))([a-zA-Z0-9\-]+\.)+(com|com\.br|br)$/um';
                 }
                 else if($type === 2){
-                    $regex = '/^[a-zA-Z0-9._%+-çÇ]+@(gmail.com|outlook.com|outlook.com.br|hotmail.com|hotmail.com.br|live.com|live.com.br|yahoo.com|yahoo.com.br|terra.com|terra.com.br|icloud.com|estudante.ufscar.br|uol.com.br|myyahoo.com|myyahoo.com.br)$/';
+                    $regex = '/^[a-zA-Z0-9._%+\-\p{L}]+@(gmail.com|outlook.com|outlook.com.br|hotmail.com|hotmail.com.br|live.com|live.com.br|yahoo.com|yahoo.com.br|terra.com|terra.com.br|icloud.com|estudante.ufscar.br|uol.com.br|myyahoo.com|myyahoo.com.br)$/';
                 }
                 else if(is_array($type)){
 
-                    $regex = '/^[a-zA-Z0-9._%+-çÇ]+@(';
+                    $regex = '/^[a-zA-Z0-9._%+\-\p{L}]+@(';
 
                     foreach($type as $index => $key){
                         $key = preg_replace('/[^a-zA-Z.]/', "", $key);
@@ -46,7 +46,7 @@
                         
                     }
                
-                    $regex = '/^[a-zA-Z0-9._%+-çÇ]+@('.$type.')$/';
+                    $regex = '/^[a-zA-Z0-9._%+\-\p{L}]+@('.$type.')$/';
 
                 }
                 else{
@@ -64,5 +64,3 @@
         }
 
     }
-
-?>
