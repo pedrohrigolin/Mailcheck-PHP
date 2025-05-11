@@ -2,9 +2,11 @@
 
     class Mailcheck{
 
-        public function __construct() {}
+        public static function check_mail(){
 
-        public function check($email, $type = false){
+        }
+
+        public function check( string $email, $type = false): bool {
 
             $regex = '/^[a-zA-Z0-9._%+-çÇ]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/';
 
