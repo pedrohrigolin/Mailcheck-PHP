@@ -33,3 +33,8 @@ A biblioteca pode ser implementada no CodeIgniter 3, adicionando o arquivo no di
 
     $this->load->library('mailcheck');
     $this->mailcheck->check(email, opções);
+
+Lembre-se de descomentar essa linha se for usar no CodeIgniter 3:
+
+    // defined('BASEPATH') OR exit('No direct script access allowed');
+    
