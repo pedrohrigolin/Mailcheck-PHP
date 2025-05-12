@@ -1,8 +1,6 @@
 # Mailcheck PHP
 **Advanced email pattern validation** ✉️
 
-![Mailcheck Banner](https://via.placeholder.com/800x200?text=Mailcheck+PHP)
-
 > Specialized library for validating standard email formats with advanced provider filtering and validation features. 🔍
 
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-blue.svg)](https://github.com/pedrohrigolin/Mailcheck-PHP)
